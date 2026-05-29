@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.A.I.D. - Epidemiología Modular</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <div class="container-mod">
+        <a href="../index.html" class="btn-back"><- VOLVER AL DASHBOARD GENERAL</a>
+        <h2>// MÓDULO 01 // SISTEMA DE PROYECCIÓN EPIDEMIOLÓGICA (CRECIMIENTO PATÓGENO)</h2>
+        <br>
+        
+        <div class="tech-documentation">
+            <h3>DOCUMENTACIÓN TÉCNICA Y CASO DE USO SOCIAL</h3>
+            <p><strong>Caso de Uso Real:</strong> Cuando un nuevo patógeno altamente infeccioso emerge (como en brotes iniciales de virus respiratorios), el crecimiento de vectores de contagio sigue un comportamiento exponencial idéntico a la secuencia de Fibonacci en su peor escenario de propagación libre.</p>
+            <p><strong>Solución a la Sociedad:</strong> Este software calcula paso a paso la velocidad de transmisión. Al correlacionar el término matemático con la capacidad del sistema de salud local, los epidemiólogos determinan con precisión quirúrgica el día exacto en que la cantidad de enfermos superará el umbral de infraestructura disponible, activando cuarentenas preventivas automáticas antes del desastre.</p>
+            <ul>
+                <li><strong>Eficiencia en Memoria:</strong> $O(1)$ Espacio Auxiliar. No almacena datos en arrays pesados, previniendo el desbordamiento de memoria del dispositivo de campo.</li>
+                <li><strong>Complejidad Temporal:</strong> $O(N)$ Pasos lineales proporcionales al período evaluado.</li>
+            </ul>
+        </div>
+
+        <form id="fibo-form" onsubmit="event.preventDefault(); calcFibo();">
+            <div class="form-group">
+                <label>Período de Análisis Epidemiológico (Días / Ciclos de incubación):</label>
+                <input type="number" id="input-fibo" min="1" max="45" placeholder="Ej. 24" required>
+            </div>
+            <button type="submit" class="btn-run">PROCESAR VECTOR DE TRANSMISIÓN</button>
+        </form>
+
+        <div id="res-fibo" class="res-box"></div>
+
+        <div class="code-box">
+            <h4>[ALGORITMO OPTIMIZADO — CONTROL DE REGISTROS VOLÁTILES]</h4>
+            <pre><code>
+// Desempeño estricto: Punteros lógicos para evitar buffers masivos en memoria RAM
+let actual = 0, siguiente = 1, auxiliar;
+for(let i = 1; i <= N; i++) {
+    acumulados += siguiente;
+    auxiliar = actual + siguiente;
+    actual = siguiente;
+    siguiente = auxiliar;
+}
+            </code></pre>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

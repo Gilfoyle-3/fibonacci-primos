@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.A.I.D. - Radiocomunicaciones Rurales</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <div class="container-mod">
+        <a href="../index.html" class="btn-back"><- VOLVER AL DASHBOARD GENERAL</a>
+        <h2>// MÓDULO 03 // DISEÑO DE FILTROS DE FRECUENCIA PARA TELECOMUNICACIONES RURALES</h2>
+        <br>
+
+        <div class="tech-documentation">
+            <h3>DOCUMENTACIÓN TÉCNICA Y CASO DE USO SOCIAL</h3>
+            <p><strong>Caso de Uso Real:</strong> Al desplegar antenas de telefonía o internet comunitario en zonas rurales, si las señales de radio se transmiten en intervalos regulares de frecuencias, se genera interferencia destructiva por resonancia armónica. La señal se degrada y los pueblos se quedan incomunicados.</p>
+            <p><strong>Solución a la Sociedad:</strong> Al cruzar los números de Fibonacci (que rigen patrones naturales asimétricos) con una Criba de Primos, se extraen "frecuencias nodales limpias". Al programar los transmisores para que solo emitan en estos puntos híbridos calculados, se erradica la interferencia magnética de la atmósfera de forma natural, garantizando internet estable y de bajo costo para escuelas y hospitales rurales.</p>
+            <ul>
+                <li><strong>Algoritmo Avanzado:</strong> Integra la **Criba de Eratóstenes** ($O(N \log \log N)$), el método de precomputación de números primos en matrices más rápido que existe, ideal para el procesamiento en routers embebidos.</li>
+            </ul>
+        </div>
+
+        <form id="combinado-form" onsubmit="event.preventDefault(); calcCombinado();">
+            <div class="form-group">
+                <label>Espectro de Canales a Auditar (Cantidad de términos):</label>
+                <input type="number" id="input-comb" min="1" max="40" placeholder="Máximo sugerido para simulación: 40" required>
+            </div>
+            <button type="submit" class="btn-run">GENERAR PATRÓN DE FRECUENCIAS LIMPIAS</button>
+        </form>
+
+        <div id="res-comb" class="res-box"></div>
+
+        <div class="code-box">
+            <h4>[SÍNTESIS HÍBRIDA — SUCESIÓN INTEGRAL CON PRECOMPUTACIÓN BOOLEANA]</h4>
+            <pre><code>
+// Criba vectorizada de alta velocidad para ráfagas densas de análisis
+let criba = new Array(limiteSuperior + 1).fill(true);
+criba[0] = criba[1] = false;
+for (let p = 2; p * p <= limiteSuperior; p++) {
+    if (criba[p]) {
+        for (let i = p * p; i <= limiteSuperior; i += p) criba[i] = false;
+    }
+}
+            </code></pre>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>
